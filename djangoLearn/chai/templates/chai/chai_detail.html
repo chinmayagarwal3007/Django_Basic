@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Chai detail page
+{% endblock  %}
+
+{% block content %}
+{{chai.name}} - {{chai.description}}
+<br>
+Reviews:
+{% if review %}
+{%for r in review%}
+<br>{{r.user|capfirst}} -: {{r.comment}} {{r.rating}}⭐
+{% endfor %}
+{% else %}
+<br>No reviews available yet.
+{% endif %}
+
+{% endblock  %}
